@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import AuthStack from './AuthStack';
-import HomeStack from './HomeStack';
+import DrawerStack from './DrawerStack';
 
 const Stack = createStackNavigator();
 const RootStack = ({userToken}) => (
@@ -9,7 +9,7 @@ const RootStack = ({userToken}) => (
     {userToken ? (
       <Stack.Screen
         name="App"
-        component={HomeStack}
+        component={DrawerStack}
         options={{
           animationEnabled: false,
           headerStyle: { backgroundColor: "#6200ee" },
