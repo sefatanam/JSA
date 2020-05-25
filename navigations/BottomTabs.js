@@ -2,39 +2,38 @@ import React from 'react';
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import HomeStack from './HomeStack'
-
+import Profile from '../screens/Profiles/Profile'
 const Tabs = createMaterialBottomTabNavigator();
 const BottomTabs = ({params}) => {
     return(
         <Tabs.Navigator
         initialRouteName="Home"
-        activeColor="#f0edf6"
+        activeColor="#6420ee"
         inactiveColor="#aca7a7"
-        barStyle={{ backgroundColor: "#6200ee" }}
+        barStyle={{ backgroundColor: "white" }}
       >
         <Tabs.Screen
-          name="Search"
+          name="Home"
           component={HomeStack}
           options={{
-            tabBarLabel: "Search",
+            tabBarLabel: "Home",
             tabBarColor: "#6200ee",
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="home" color={color} size={26} />
             ),
           }}
         />
-        {/* <Tabs.Screen
-          name="Home"
-          component={HomeStack}
+        <Tabs.Screen
+          name="Profile"
+          component={Profile}
           options={{
-            tabBarLabel: "Home",
+            tabBarLabel: "Profile",
             tabBarColor: "#6200ee",
-    
             tabBarIcon: ({ color }) => (
-              <MaterialCommunityIcons name="home" color={color} size={26} />
+              <MaterialCommunityIcons name="account" color={color} size={26} />
             ),
           }}
-        /> */}
+        />
       </Tabs.Navigator>
     
     )

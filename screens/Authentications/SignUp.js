@@ -4,7 +4,7 @@ import {Button, TextInput} from 'react-native-paper';
 import {AuthContext} from '../../context/AuthContext';
 import {Formik} from 'formik';
 
-const SingUp = () => {
+const SingUp = (props) => {
   const {signUp} = React.useContext(AuthContext);
   const isAuthIsRight = values => {
     console.log(values);
@@ -19,7 +19,7 @@ const SingUp = () => {
   };
   return (
     <View style={styles.container}>
-      <Text style={styles.textStyles}>Create Account Screen</Text>
+      <Text style={styles.textStyles}>Create Account</Text>
       <Formik
         initialValues={{
           name: '',
@@ -67,7 +67,7 @@ const SingUp = () => {
                 value={values.confirmPassword}
                 mode="outlined"
               />
-              <Button mode="outlined" onPress={handleSubmit}>
+              <Button style={styles.buttonStyle} mode="outlined" onPress={handleSubmit}>
                 Sign Up
               </Button>
             </View>
@@ -75,7 +75,7 @@ const SingUp = () => {
         }}
       </Formik>
 
-      {/* <Button onPress={() => signUp()}>Sign Up</Button> */}
+      <Button onPress={() =>props.navigation.goBack()}>Already Have Account ?</Button>
     </View>
   );
 };
@@ -106,4 +106,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#6200ee',
   },
+  buttonStyle:{
+   marginTop:10,
+   color:'#fff',
+   backfaceVisibility:'visible',
+   backgroundColor:'#fff'
+  }
 });

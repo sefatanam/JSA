@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View,StyleSheet} from 'react-native';
+import {Text, View,Image,StyleSheet} from 'react-native';
 import {Button,TextInput} from 'react-native-paper';
 import {AuthContext} from '../../context/AuthContext';
 import {Formik} from 'formik';
@@ -14,7 +14,9 @@ const SignIn = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.textStyles}>Jomidar Login</Text>
+
+<Image style={styles.imageStyle} source = {require('../../assets/AITS.png')} />
+      <Text style={styles.textStyles}> Login</Text>
 
       <Formik
         initialValues={{emailOrPhoneNumber: '', password: ''}}
@@ -45,7 +47,7 @@ const SignIn = ({navigation}) => {
                 value={values.password}
                 mode="outlined"
               />
-              <Button mode="outlined" onPress={handleSubmit}>
+              <Button mode="outlined" style={styles.button} onPress={handleSubmit}>
                 Sign In
               </Button>
             </View>
@@ -67,10 +69,8 @@ const styles = StyleSheet.create({
       alignItems: "center",
     },
     button: {
-      paddingHorizontal: 20,
-      paddingVertical: 10,
-      marginVertical: 10,
-      borderRadius: 5,
+    marginTop:10,
+    backgroundColor:'#fff'
     },
     signInContainer: {
       alignContent: "center",
@@ -83,6 +83,11 @@ const styles = StyleSheet.create({
       fontFamily: "sans-serif",
       fontWeight: "bold",
       color: "#6200ee",
+    },
+    imageStyle:{
+      height:150,
+      width:150,
+      borderRadius:150/2
     },
   });
   

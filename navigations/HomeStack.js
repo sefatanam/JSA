@@ -11,13 +11,13 @@ const HomeStack = ({navigation}) => (
   <Stack.Navigator>
     <Stack.Screen
       options={{
-        headerStyle: {backgroundColor: '#6200ee'},
-        headerTintColor: 'white',
+        headerTintColor: 'black',
         headerLeft: () => (
           <Icon.Button
             name="ios-menu"
             size={25}
-            backgroundColor="#6200ee"
+            color="black"
+            backgroundColor='white'
             onPress={() => navigation.openDrawer()}></Icon.Button>
         ),
       }}
